@@ -1,4 +1,4 @@
-package my;
+package encryption;
 
 import java.math.BigInteger;
 import java.security.KeyFactory;
@@ -458,7 +458,7 @@ public class RSA {
 		System.out.println("source : " + original);
 	}
 
-	public static final String jiami(String data) {
+	public static final String RSAEncryption(String data) {
 		String cipherData = RSA.encryptByPrivateAsStr(data, RSA.generateKeyPair().get(PRIVATE_KEY));
 		return cipherData;
 	}

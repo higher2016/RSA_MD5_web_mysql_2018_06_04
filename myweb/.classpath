@@ -21,5 +21,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-codec-1.11.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-5.0.6-bin.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-email-1.5.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

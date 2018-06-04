@@ -1,9 +1,8 @@
-package my;
+package encryption;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class MD5 {
@@ -56,20 +55,10 @@ public class MD5 {
 		return sb.toString();
 	}
 
-	public static void main(String[] args) {
-		String test1 = "01tSep";
-		String[] test = { test1 };
-		for (String s : test) {
-			String str = EncryptionStr32(s, MD5, UTF8);
-			System.out.println(str);
-			String ss = RSA.jiami(str);
-			System.out.println(ss);
-			System.out.println(jiequ(ss));
-		}
-	}
-
-	public static String jiequ(String ss) {
-		int fristIndex = avgRandom(0, ss.length() - 7);
+	public static String createVerificationCodeByPassword(String password) {
+		int fristIndex = avgRandom(0, password.length() - 7);
+		String str = EncryptionStr32(password, MD5, UTF8);
+		String ss = RSA.RSAEncryption(str);
 		return ss.substring(fristIndex, fristIndex + 6);
 	}
 
